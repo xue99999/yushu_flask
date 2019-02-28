@@ -1,7 +1,7 @@
 from flask import Flask
 from app.models.base import db
 from flask_login import LoginManager
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 
 login_manager = LoginManager()
 
@@ -13,7 +13,7 @@ def create_app():
     register_blueprint(app)
 
     db.init_app(app)
-    Migrate(app, db)
+    # Migrate(app, db)
     login_manager.init_app(app)
     login_manager.login_view = 'web.login'
     login_manager.message = '请登录或者注册'
